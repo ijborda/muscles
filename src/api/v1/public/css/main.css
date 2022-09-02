@@ -1,0 +1,92 @@
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Container */
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Prevent white space on the right side to appear when screensize is small */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+/* Defaults */
+html {
+  --very-light: #5BAABD;
+  --light: #489FB5;
+  --moderate: #3C92A6;
+  --vigorous: #2F8498;
+  --very-hard: #237789;
+  --maximum-effort: #16697A;
+  --transition: all 0.2s ease-in-out;
+  --mainMid: #489FB5;
+  --mainDark: #16697A;
+  --mainLight: #82C0CC;
+  --accent1: #EDE7E3;
+  --accent: #FFA62B;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: var(--mainLight);
+  color: #fff;
+  margin-bottom: 100px;
+}
+
+nav .nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .links {
+  display: flex;
+  list-style: none;
+}
+nav .links li {
+  margin: 0 10px;
+}

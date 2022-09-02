@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="readability, researchers, reading">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Imari Joy C. Borda">
+		<title>Your Year in Pixels</title>
+		<!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+		<!-- Primary Meta Tags -->
+		<meta name="title" content="Readability Test For Researchers">
+		<meta name="description" content="See and check that your text is not too verbose. Supports unlimited text length. Designed for researchers and writers who have long texts.">
+		<meta name="image" property="og:image" content="https://github.com/ijborda/readability/blob/main/assets/readme/readme-1.png?raw=true">
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://imarijoyborda.com/readability/">
+		<meta property="og:title" content="Readability Test For Researchers">
+		<meta property="og:description" content="See and check that your text is not too verbose. Supports unlimited text length. Designed for researchers and writers who have long texts.">
+		<meta property="og:image" content="assets/readme/readme-1.png">
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://imarijoyborda.com/readability/">
+		<meta property="twitter:title" content="Readability Test For Researchers">
+		<meta property="twitter:description" content="See and check that your text is not too verbose. Supports unlimited text length. Designed for researchers and writers who have long texts.">
+		<meta property="twitter:image:src" content="https://github.com/ijborda/readability/blob/main/assets/readme/readme-1.png?raw=true">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- External CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+		<!-- Add Favicon -->
+		<link rel="icon" href="favicon.ico">
+	</head>
+	<body class="dashboard">
+		<header>
+      <!-- <div class="container">
+        <div class="navbar">
+          <%- include('partials/navbar') %>
+        </div>
+      </div> -->
+		</header>
+		<main>
+      <div class="profile">
+        <div class="profile-image">
+          <img src="<%= profile.image.replace(/s96-c$/, 's240-c')%>" alt="Profile Picture">
+        </div>
+        <div class="profile-name">
+          <h2><%= profile.displayName %></h2>
+        </div>
+        <div class="profile-statistics">
+          <div class="profile-current-streak">
+            <p class="value"><%= stats.current[0] %></p>
+            <p class="caption">Current Streak</p>
+            <p class="detail"><%= stats.current[1] %> - <%= stats.current[2] %></p>
+          </div>
+          <div class="profile-longest-streak">
+            <p class="value"><%= stats.longest[0] %></p>
+            <p class="caption">Longest Streak</p>
+            <p class="detail"><%= stats.longest[1] %> - <%= stats.longest[2] %></p>
+          </div>
+          <div class="profile-total-days">
+            <p class="value"><%= stats.total[0] %></p>
+            <p class="caption">Total Days</p>
+            <p class="detail"><%= stats.total[1] %> - <%= stats.total[2] %></p>
+          </div>
+        </div>
+      </div>
+      <div class="table">
+        <div class="grid">
+          <div class="grid-col">
+            <span class="grid-col-title">Day</span>
+            <div class="grid-col-cells days"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div>
+          </div>  
+          <% ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'].forEach( month => { %>
+            <div class="grid-col">
+              <span class="grid-col-title"><%= month[0].toUpperCase() + month.substring(1).toLowerCase(); %></span>
+              <div class="grid-col-cells fill" month="<%= month %>">
+                <% grid["2022"][month].forEach( (mood, i) => { %>
+                  <% if(mood === 1) {%>
+                    <span day="<%= i + 1 %>" class='very-light'></span>
+                  <% } else if (mood === 2) { %>
+                    <span day="<%= i + 1 %>" class='light'></span>
+                  <% } else if (mood === 3) { %>
+                    <span day="<%= i + 1 %>" class='moderate'></span>
+                  <% } else if (mood === 4) { %>
+                    <span day="<%= i + 1 %>" class='vigorous'></span>
+                  <% } else if (mood === 5) { %>
+                    <span day="<%= i + 1 %>" class='very-hard'></span>
+                  <% } else if (mood === 6) { %>
+                    <span day="<%= i + 1 %>" class='maximum-effort'></span>
+                  <% } else if (mood === 7) { %>
+                    <span day="<%= i + 1 %>" class='tired'></span>
+                  <% } else { %>
+                    <span day="<%= i + 1 %>"></span>
+                  <% } %>    
+                <% }) %> 
+              </div>
+            </div>      
+          <% }) %>
+        </div>
+        <div class="text">
+          <div class="row">
+            <p>What is your exercise level?</p>
+            <div class="options">
+              <ul>
+                <li class="very-light">
+                  <div><span class="box"></span></div><div><span>Very Light</span><span>1 - 100 calories</span></div>
+                </li>
+                <li class="light">
+                  <div><span class="box"></span></div><div><span>Light</span><span>101 - 200 calories</span></div>
+                </li>
+                <li class="moderate">
+                  <div><span class="box"></span></div><div><span>Moderate</span><span>201 - 300 calories</span></div>
+                </li>
+                <li class="vigorous">
+                  <div><span class="box"></span></div><div><span>Vigorous</span><span>301 - 400 calories</span></div>
+                </li>
+                <li class="very-hard">
+                  <div><span class="box"></span></div><div><span>Very Hard</span><span>401 - 500 calories</span></div>
+                </li>
+                <li class="maximum-effort">
+                  <div><span class="box"></span></div><div><span>Maximum Effort</span><span>501 - 600 calories</span></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <ul>
+          <li>
+            <a href="/auth/logout">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa-solid fa-circle-info"></i>
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa-solid fa-comment-dots"></i>
+              <span>Feedback</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa-solid fa-mug-saucer"></i>
+              <span>Support</span>
+            </a>
+          </li>
+          <li>
+            <div id="deleteAccount">
+              <i class="fa-solid fa-trash-can"></i>
+              <span>Delete Account</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+
+      </div>
+    </footer>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

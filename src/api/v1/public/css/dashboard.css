@@ -1,0 +1,223 @@
+/******************************************
+/* MAIN STYLES/LAYOUT
+/*******************************************/
+
+main {
+  display: flex;
+  height: 100%;
+}
+main .profile {
+  width: 30%;
+  background: var(--mainMid);
+  border-right: 1px solid var(--mainDark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  text-align: center;
+}
+main .table {
+  margin-left: 20px;
+  padding: 20px 0;
+  width: 70%;
+}
+
+/******************************************
+/* PROFILE STYLES/LAYOUT
+/*******************************************/
+
+.profile-image img {
+  width: 100%;
+  max-width: 300px;
+  border: 5px solid #ffffff;
+  outline: 2px solid var(--mainDark);
+  border-radius: 5px;
+}
+.profile-name h2 {
+  color: #fff;
+}
+.profile-statistics div {
+  padding: 10px 30px;
+  border-bottom: 1px solid var(--mainLight);
+}
+.profile-statistics p {
+  margin: .5em 0;
+}
+.profile-statistics p.value {
+  font-size: 30px;
+  font-weight: 900;
+}
+.profile-statistics p.detail {
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 12px;
+}
+
+
+/******************************************
+/* DASHBOARD STYLES/LAYOUT
+/*******************************************/
+
+.table {
+  display: flex;
+}
+.table .grid {
+  width: 350px;
+}
+.table .text {
+  width: 350px;
+}
+
+.grid {
+  display: flex; 
+  flex-flow: row nowrap;
+}
+.grid-col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.grid-col-cells {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.grid-col-title {
+  text-align: center;
+  font-size: 9px;
+  height: 15px !important;
+}
+.grid-col span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 1.5px;
+}
+.grid-col-cells.days span {
+  text-align: center;
+  border: none;
+  font-size: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-col-cells.fill span {
+  border: .5px solid var(--mainLight);
+  border-radius: 3px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.54);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.683);
+}
+
+.text p {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--mainDark);
+}
+.options .box {
+  display: inline-block;
+  border: .5px solid #000;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.683);
+  border-radius: 3px;
+}
+.options ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.options li {
+  transition: var(--transition);
+  cursor: pointer;
+  letter-spacing: .1em;
+  color: rgba(255, 255, 255);
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+.options li div:last-child{
+  display: flex;
+  flex-direction: column;
+}
+.options li div:last-child span:last-child{
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 5px;
+}
+.options li span {
+  pointer-events: none;
+}
+.options .very-light .box, .grid-col-cells.fill .very-light {
+  background: var(--very-light);
+}
+.options .light .box, .grid-col-cells.fill .light {
+  background: var(--light);
+}
+.options .moderate .box, .grid-col-cells.fill .moderate {
+  background: var(--moderate);
+}
+.options .vigorous .box, .grid-col-cells.fill .vigorous {
+  background: var(--vigorous);
+}
+.options .very-hard .box, .grid-col-cells.fill .very-hard {
+  background: var(--very-hard);
+}
+.options .maximum-effort .box, .grid-col-cells.fill .maximum-effort {
+  background: var(--maximum-effort);
+}
+.options .tired .box, .grid-col-cells.fill .tired {
+  background: var(--tired);
+}
+
+
+/******************************************
+/* LINKS STYLES/LAYOUT
+/*******************************************/
+
+.links {
+  margin-right: 20px;
+}
+.links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.links li {
+  margin: 50px 0;
+}
+.links a, .links div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}
+.links i {
+  font-size: 20px;
+}
+.links span {
+  margin-top: 5px;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+
+
+/******************************************
+/* HOVER STYLES/LAYOUT
+/*******************************************/
+
+/* Hover / Selection effects */
+.grid-col-cells.fill span:hover {
+  transform: scale(1.6);
+  border: 2px solid #16697aa5;
+}
+.grid-col-cells.fill span.active {
+  transform: scale(1.6);
+  border: 2px solid var(--mainDark);
+}
+.options li:hover  {
+  transform: scale(1.1);
+}
