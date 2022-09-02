@@ -1,17 +1,15 @@
+/* eslint-disable no-console */
 const mongoose = require('mongoose');
 
-const connectDB = async () => {
+module.exports = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_STRING, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      // useFindAndModify: false,
-    })
-    console.log(`MongoDB Connected: ${conn.connection.host}`)
+    });
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
-    console.error(err)
-    process.exit(1)
+    console.error(err);
+    process.exit(1);
   }
-}
-
-module.exports = connectDB
+};
